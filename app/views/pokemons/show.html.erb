@@ -1,3 +1,5 @@
 <h1>la show de <%= @pokemon.name %></h1>
-<%= cl_image_tag @pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @pokemon.photo.key != nil %>
+  <%= cl_image_tag @pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <p><%= link_to "revoir tout les pokemon", pokemons_path %></p>
