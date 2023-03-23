@@ -12,10 +12,10 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    @pokemons = Pokemon.new(pokemon_params)
+    @pokemon = Pokemon.new(pokemon_params)
     @pokemon.user = current_user
-    if @garage.save
-      redirect_to garage_path(@garage)
+    if @pokemon.save
+      redirect_to pokemon_path(@pokemon)
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,6 +24,6 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:name, :description, :photo, :type, :price, :level)
+    params.require(:pokemon).permit(:name, :description, :photo, :pokemon_type, :price, :level)
   end
 end
