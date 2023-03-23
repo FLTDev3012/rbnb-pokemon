@@ -13,11 +13,15 @@ Pokemon.destroy_all
 p "------  pokemon destroy ----------"
 
 
-user1 = User.create(email: "dorian@gmail.com", password: "123456")
+user1 = User.create(email: "dorian@gmail.com", password: "coucou")
+user2 = User.create(email: "dorian2@gmail.com", password: "coucou")
 
 p "------ #{User.count} user created ----------"
 
 pokemon1 = Pokemon.create(name: "Pikachu", user_id: user1.id)
+pokemon2 = Pokemon.create(name: "Salameche", user_id: user1.id)
+pokemon3 = Pokemon.create(name: "Bulbizarre", user_id: user1.id)
+pokemon4 = Pokemon.create(name: "Carapuce", user_id: user2.id)
 
 
 p "------ #{Pokemon.count} pokemon created ----------"
