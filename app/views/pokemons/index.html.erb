@@ -1,6 +1,9 @@
 <h1>index des pokemons</h1>
+<p><%= link_to "ajouter votre pokemon",  new_pokemon_path %></p>
+
 
 <% @pokemons.each do |pokemon| %>
   <p><%= pokemon.name %></p>
-
+  <img src="<%= pokemon.photo.url %>" style="width: 200px;">
+  <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
 <% end %>
