@@ -1,11 +1,20 @@
 <h1>index des pokemons</h1>
+<br>
+<br>
 <p><%= link_to "ajouter votre pokemon",  new_pokemon_path %></p>
 
 
 <% @pokemons.each do |pokemon| %>
-  <p><%= pokemon.name %></p>
+  <br>
+  <br>
+  <br>
+  <p><%= pokemon.name %> lvl <%= pokemon.level %></p>
   <% if pokemon.photo.key != nil %>
     <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
+  <p><%= pokemon.description %></p>
+  <p><%= pokemon.price %> pieces</p>
+
   <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
+
 <% end %>
