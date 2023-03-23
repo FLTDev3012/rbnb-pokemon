@@ -4,6 +4,8 @@
 
 <% @pokemons.each do |pokemon| %>
   <p><%= pokemon.name %></p>
-  <img src="<%= pokemon.photo.url %>" style="width: 200px;">
+  <% if pokemon.photo.key != nil %>
+    <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
 <% end %>
