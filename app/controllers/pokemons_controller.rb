@@ -1,22 +1,25 @@
 class PokemonsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @pokemons = policy_scope(Pokemon)
   end
 
   def show
     @pokemon = Pokemon.find(params[:id])
-    authorize @garage
+    authorize @pokemon
   end
 
   def new
     @pokemon = Pokemon.new
-    authorize @garage
+    authorize @pokemon
   end
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @pokemon.user = current_user
-    authorize @garage
+    authorize @pokemon
     if @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
