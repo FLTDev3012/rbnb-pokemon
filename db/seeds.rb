@@ -63,3 +63,7 @@ pokemon8.save
 
 
 p "------ #{Pokemon.count} pokemon created ----------"
+
+URI.open("https://www.pokemon-france.com/wp-content/themes/pf/habillages/habillage_pf_sg_2021_pattern.jpg")
+
+p "------ background created ----------"
