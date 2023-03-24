@@ -1,0 +1,8 @@
+<h1>Bienvenue sur ton Dashboard ! Trainer <%= current_user.email %>!</h1>
+
+
+<% @pokemons.each do |pokemon| %>
+  <br><br><br><br><br>
+  <p><%= pokemon.name %></p>
+  <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
