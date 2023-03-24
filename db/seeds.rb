@@ -40,6 +40,26 @@ pokemon4 = Pokemon.create(name: "Carapuce", user_id: user2.id, pokemon_type: "ea
 pokemon4.photo.attach(io: file, filename: "carapuce.png", content_type: "image/png")
 pokemon4.save
 
+file = URI.open("https://static.hitek.fr/img/actualite/2018/06/04/fb_marcel-snorlax-rest.png")
+pokemon5 = Pokemon.create(name: "ronflex", user_id: user2.id, pokemon_type: "normal", description: "ronflexblalbalbal", price: "500", level: "69")
+pokemon5.photo.attach(io: file, filename: "ronflex.png", content_type: "image/png")
+pokemon5.save
+
+file = URI.open("https://www.pokepedia.fr/images/9/98/Dracaufeu_d%27Alain.png")
+pokemon6 = Pokemon.create(name: "Dracaufeu", user_id: user1.id, pokemon_type: "feu", description: "Dracaufeublablabla", price: "1050", level: "107")
+pokemon6.photo.attach(io: file, filename: "dracaufeu.png", content_type: "image/png")
+pokemon6.save
+
+file = URI.open("https://www.pokepedia.fr/images/thumb/3/38/%C3%89voli_de_Chlo%C3%A9.png/300px-%C3%89voli_de_Chlo%C3%A9.png")
+pokemon7 = Pokemon.create(name: "Evoli", user_id: user2.id, pokemon_type: "normal", description: "evoliiiidfsdf", price: "30", level: "32")
+pokemon7.photo.attach(io: file, filename: "bulbizarre.png", content_type: "image/png")
+pokemon7.save
+
+file = URI.open("https://static1.millenium.org/articles/6/33/30/96/@/1006236-grotte-insecateur-amp_main_media_schema-1.jpg")
+pokemon8 = Pokemon.create(name: "Insecateur", user_id: user1.id, pokemon_type: "plante", description: "insecateurrrrrr", price: "70", level: "56")
+pokemon8.photo.attach(io: file, filename: "insecateur.png", content_type: "image/png")
+pokemon8.save
+
 
 
 p "------ #{Pokemon.count} pokemon created ----------"
