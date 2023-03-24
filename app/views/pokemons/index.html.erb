@@ -5,34 +5,34 @@
 
 
 <% @pokemons.each do |pokemon| %>
-  <br>
-  <br>
-  <br>
-  <div class="index-card-jaune">
 
-    <div class="index-card">
+  <div class="card-container">
 
-      <div class="index-card-nom-level-pv">
-        <p><%= pokemon.name %></p>
-        <p>lvl <%= pokemon.level %></p>
-        <p>80 pv</p>
+    <div class="index-card-jaune">
+
+      <div class="index-card-blue">
+
+        <div class="index-card-nom-level-pv">
+          <p><%= pokemon.name %></p>
+          <p>lvl <%= pokemon.level %></p>
+          <p>80 pv</p>
+        </div>
+
+        <div class="index-card-photo">
+          <%= cl_image_tag pokemon.photo.key, height: 200, width: 280, crop: :fill %>
+          <!-- width max -->
+        </div>
+
+        <div class="index-card-description">
+          <p><%= pokemon.description %></p>
+        </div>
+
       </div>
-
-      <div class="index-card-photo">
-        <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
-        <!-- width max -->
-      </div>
-
-      <div class="index-card-description">
-        <p><%= pokemon.description %></p>
-        <p><%= pokemon.price %> pieces</p>
-      </div>
-
-      <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
-
     </div>
 
-  </div>
+    <p><%= pokemon.price %> pieces</p>
+    <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
 
+  </div>
 
 <% end %>
