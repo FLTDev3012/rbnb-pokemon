@@ -13,34 +13,26 @@
     <div class="index-card">
 
       <div class="index-card-nom-level-pv">
-            <!-- nom -->
-            <p>nom</p>
-            <!-- level -->
-            <p>level</p>
-
-            <!-- pv -->
-            <p>pv</p>
-
+        <p><%= pokemon.name %></p>
+        <p>lvl <%= pokemon.level %></p>
+        <p>80 pv</p>
       </div>
 
       <div class="index-card-photo">
-            <!-- width max -->
+        <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+        <!-- width max -->
       </div>
 
       <div class="index-card-description">
-            <!-- descr -->
+        <p><%= pokemon.description %></p>
+        <p><%= pokemon.price %> pieces</p>
       </div>
 
-
+      <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
 
     </div>
 
   </div>
-  <p><%= pokemon.name %> lvl <%= pokemon.level %></p>
-  <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
-  <p><%= pokemon.description %></p>
-  <p><%= pokemon.price %> pieces</p>
 
-  <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
 
 <% end %>
