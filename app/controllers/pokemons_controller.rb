@@ -1,24 +1,31 @@
 class PokemonsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
-    @pokemons = Pokemon.all
+    @pokemons = policy_scope(Pokemon)
   end
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    authorize @pokemon
   end
 
   def new
     @pokemon = Pokemon.new
+    authorize @pokemon
   end
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @pokemon.user = current_user
+    authorize @pokemon
     if @pokemon.save
       redirect_to pokemon_path(@pokemon)
     else
       render :new, status: :unprocessable_entity
     end
+
   end
 
   private
