@@ -1,4 +1,6 @@
 <h1>Bienvenue sur ton Dashboard ! Trainer <%= current_user.email %>!</h1>
+<%= link_to "index des pokemon", pokemons_path%>
+
 
 
 <% @pokemons.each do |pokemon| %>
