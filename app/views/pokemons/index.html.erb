@@ -3,36 +3,37 @@
 <br>
 <p><%= link_to "ajouter votre pokemon",  new_pokemon_path %></p>
 
+<div class="grid-index">
+  <% @pokemons.each do |pokemon| %>
+    <%= link_to pokemon_path(pokemon), class: "link-card" do%>
+      <div class="card-container">
 
-<% @pokemons.each do |pokemon| %>
+        <div class="index-card-jaune">
 
-  <div class="card-container">
+          <div class="index-card-blue">
 
-    <div class="index-card-jaune">
+            <div class="index-card-nom-level-pv">
+              <p><%= pokemon.name %></p>
+              <p>lvl <%= pokemon.level %></p>
+              <p>80 pv</p>
+            </div>
 
-      <div class="index-card-blue">
+            <div class="index-card-photo">
+              <%= cl_image_tag pokemon.photo.key, height: 200, width: 280, crop: :fill %>
+              <!-- width max -->
+            </div>
 
-        <div class="index-card-nom-level-pv">
-          <p><%= pokemon.name %></p>
-          <p>lvl <%= pokemon.level %></p>
-          <p>80 pv</p>
+            <div class="index-card-description">
+              <p><%= pokemon.description %></p>
+            </div>
+
+          </div>
         </div>
 
-        <div class="index-card-photo">
-          <%= cl_image_tag pokemon.photo.key, height: 200, width: 280, crop: :fill %>
-          <!-- width max -->
-        </div>
-
-        <div class="index-card-description">
-          <p><%= pokemon.description %></p>
-        </div>
+        <p><%= pokemon.price %> pieces</p>
 
       </div>
-    </div>
+    <% end %>
 
-    <p><%= pokemon.price %> pieces</p>
-    <p><%= link_to "voir le pokemon",  pokemon_path(pokemon) %></p>
-
-  </div>
-
-<% end %>
+  <% end %>
+</div>

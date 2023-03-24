@@ -1,5 +1,33 @@
+
+
+
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+body a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a.link-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-index{
+  padding: 1em;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  grid-gap: 10px
+}
+
 .card-container {
   background-color: rgb(81, 81, 81);
+
 }
 
 .index-card-jaune {
