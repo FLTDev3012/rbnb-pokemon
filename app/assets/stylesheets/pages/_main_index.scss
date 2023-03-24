@@ -1,7 +1,10 @@
 .body-index {
   background-image: url(https://us.123rf.com/450wm/pirina/pirina1604/pirina160400075/56220418-%C3%A9t%C3%A9-herbe-verte-texture-motif-summer-background-%C3%A9t%C3%A9-grass-texture-de-fond-herbe-pattern-pour-la.jpg);
 }
-
+.logo {
+  display: flex;
+  justify-content: center;
+}
 .fondu-haut-index {
   //background-color: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
   height: 100px;
