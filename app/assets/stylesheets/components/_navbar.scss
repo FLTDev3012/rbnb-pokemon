@@ -1,6 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #575757
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +12,14 @@
 
 .nav-link {
   color: #fff;
+}
+
+.navbar {
+  height: 100px;
+  width: 100%;
+  background: #575757;
+  background: linear-gradient(180deg, #575757 0%, rgba(255,255,255,0) 100%);
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }

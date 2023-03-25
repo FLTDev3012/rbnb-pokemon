@@ -1,6 +1,11 @@
 
 <div class="body-show">
+  <div class="fondu-haut-index">
+    <%= render "shared/navbar" %>
+  </div>
 
+  <div class="body-content">
+  </div>
   <div class="container-show-glass">
     <div class="show-content">
       <h1>la show de <%= @pokemon.name %></h1>
@@ -24,5 +29,8 @@
       <p><%= link_to "revoir tout les pokemon", pokemons_path %></p>
       <p><%= link_to "réserver", pokemons_path %></p>
     </div>
+
+
+  <div class="fondu-bas-show"></div>
 
 </div>

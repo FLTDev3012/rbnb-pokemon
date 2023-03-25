@@ -4,13 +4,25 @@
 .logo {
   display: flex;
   justify-content: center;
+  padding-top: 100px;
 }
+
+.index-proposition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .fondu-haut-index {
   //background-color: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-  height: 100px;
-  width: 100%;
-  background: #575757;
-  background: linear-gradient(180deg, #575757 0%, rgba(255,255,255,0) 100%);
+  // height: 100px;
+  // width: 100%;
+  // background: #575757;
+  // background: linear-gradient(180deg, #575757 0%, rgba(255,255,255,0) 100%);
+  // position: absolute;
+  // top: 0px;
 }
 
 .fondu-bas-index {

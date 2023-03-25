@@ -1,16 +1,23 @@
 .body-show {
   background-image: url(https://us.123rf.com/450wm/pirina/pirina1604/pirina160400075/56220418-%C3%A9t%C3%A9-herbe-verte-texture-motif-summer-background-%C3%A9t%C3%A9-grass-texture-de-fond-herbe-pattern-pour-la.jpg);
-  height: 93.4vh;
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .body-glass {
   background-color: rgba($color: #ffffff, $alpha: 0.5);
 }
 
+.body-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 
 .container-show-glass
@@ -62,4 +69,14 @@
   justify-content: space-between;
   width: 100%;
   max-width: 1000px;
+}
+
+
+.fondu-bas-show {
+  height: 100px;
+  width: 100%;
+  background: #575757;
+  background: linear-gradient(0deg, #575757 0%, rgba(255,255,255,0) 100%);
+  position: absolute;
+  bottom: 0px;
 }

@@ -1,12 +1,19 @@
 <div class="body-index">
-  <div class="fondu-haut-index"></div>
+  <div class="fondu-haut-index">
+    <%= render "shared/navbar" %>
+  </div>
+
+
   <div class="logo">
     <%= image_tag("logo") %>
   </div>
-  <h1>vous propose:</h1>
-  <br>
-  <br>
-  <p><%= link_to "ajouter votre pokemon",  new_pokemon_path %></p>
+
+  <div class="index-proposition">
+    <h1>vous propose:</h1>
+    <br>
+    <br>
+    <p><%= link_to "ajouter votre pokemon",  new_pokemon_path %></p>
+  </div>
 
   <div class="grid-index">
     <% @pokemons.each do |pokemon| %>
@@ -24,11 +31,6 @@
             <% else %>
               <div class="index-card-blue">
             <% end %>
-
-
-
-
-
 
                 <div class="index-card-nom-level-pv">
                   <p><%= pokemon.name %></p>
