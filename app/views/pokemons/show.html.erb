@@ -1,17 +1,28 @@
 
 <div class="body-show">
-  <div class="container-show">
-    <h1>la show de <%= @pokemon.name %></h1>
-    <p>lvl.<%= @pokemon.level %></p>
+
+  <div class="container-show-glass">
+    <div class="show-content">
+      <h1>la show de <%= @pokemon.name %></h1>
+      <p>lvl.<%= @pokemon.level %></p>
 
 
-    <%= cl_image_tag @pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="show-type-price">
+        <p><%= @pokemon.pokemon_type %></p>
+        <p><%= @pokemon.price %> pieces</p>
+      </div>
+      <div class="show-description">
+        <p><%= @pokemon.description %></p>
+      </div>
 
-    <p><%= @pokemon.pokemon_type %></p>
-    <p><%= @pokemon.description %></p>
-    <p><%= @pokemon.price %> pieces</p>
 
 
-    <p><%= link_to "revoir tout les pokemon", pokemons_path %></p>
+    </div>
   </div>
+    <div class="show-link">
+      <p><%= link_to "revoir tout les pokemon", pokemons_path %></p>
+      <p><%= link_to "réserver", pokemons_path %></p>
+    </div>
+
 </div>
