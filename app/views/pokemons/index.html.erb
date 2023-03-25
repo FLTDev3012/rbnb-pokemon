@@ -15,24 +15,37 @@
 
           <div class="index-card-jaune">
 
-            <div class="index-card-blue">
+            <% if pokemon.pokemon_type == "feu" %>
+              <div class="index-card-rouge">
+            <% elsif pokemon.pokemon_type == "plante"%>
+              <div class="index-card-vert">
+            <% elsif pokemon.pokemon_type == "normal"%>
+              <div class="index-card-normal">
+            <% else %>
+              <div class="index-card-blue">
+            <% end %>
 
-              <div class="index-card-nom-level-pv">
-                <p><%= pokemon.name %></p>
-                <p>lvl <%= pokemon.level %></p>
-                <p>80 pv</p>
+
+
+
+
+
+                <div class="index-card-nom-level-pv">
+                  <p><%= pokemon.name %></p>
+                  <p>lvl <%= pokemon.level %></p>
+                  <p>80 pv</p>
+                </div>
+
+                <div class="index-card-photo">
+                  <%= cl_image_tag pokemon.photo.key, height: 200, width: 280, crop: :fill %>
+                  <!-- width max -->
+                </div>
+
+                <div class="index-card-description">
+                  <p><%= pokemon.description %></p>
+                </div>
+
               </div>
-
-              <div class="index-card-photo">
-                <%= cl_image_tag pokemon.photo.key, height: 200, width: 280, crop: :fill %>
-                <!-- width max -->
-              </div>
-
-              <div class="index-card-description">
-                <p><%= pokemon.description %></p>
-              </div>
-
-            </div>
           </div>
 
           <p><%= pokemon.price %> pieces</p>
