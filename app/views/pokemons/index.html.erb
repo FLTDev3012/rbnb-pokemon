@@ -9,10 +9,7 @@
   </div>
 
   <div class="index-proposition">
-    <h1>vous propose:</h1>
-    <br>
-    <br>
-    <p><%= link_to "ajouter votre pokemon",  new_pokemon_path %></p>
+    <p><%= link_to "ajouter votre pokemon",  new_pokemon_path, class: "button"%></p>
   </div>
 
   <div class="grid-index">
@@ -28,6 +25,8 @@
               <div class="index-card-vert">
             <% elsif pokemon.pokemon_type == "normal"%>
               <div class="index-card-normal">
+            <% elsif pokemon.pokemon_type == "electrique"%>
+              <div class="index-card-eleck">
             <% else %>
               <div class="index-card-blue">
             <% end %>
@@ -49,8 +48,9 @@
 
               </div>
           </div>
-
-          <p><%= pokemon.price %> pieces</p>
+          <div class="index-card-price">
+            <p><%= pokemon.price %> pieces</p>
+          </div>
 
         </div>
       <% end %>
@@ -58,6 +58,5 @@
     <% end %>
   </div>
 
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <div class="fondu-bas-index"></div>
 </div>

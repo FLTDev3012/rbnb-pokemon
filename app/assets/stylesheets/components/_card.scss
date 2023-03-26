@@ -11,6 +11,10 @@ body a:hover {
   color: rgb(187, 255, 195);
 }
 
+.card-container p {
+  margin-bottom: 0;
+}
+
 a.link-card {
   display: flex;
   align-items: center;
@@ -26,7 +30,7 @@ a.link-card {
 }
 
 .card-container {
-  background-color: rgb(81, 81, 81);
+  margin: 10px 0;
 
 }
 
@@ -44,24 +48,36 @@ a.link-card {
   background-color: rgb(0, 149, 255);
   height: 100%;
   width: 100%;
+  border-radius: 4px;
+}
+
+.index-card-eleck {
+  background-color: #f8fc22;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
 }
 
 .index-card-rouge {
-  background-color: rgb(255, 0, 0);
+  // background-color: rgb(255, 0, 0);
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f144fa15-4001-4f05-83d9-73ad837f6bc4/d4wcj31-53a8338d-c2b1-4a00-ad15-aaa314cb9f6b.png);
   height: 100%;
   width: 100%;
+  border-radius: 4px;
 }
 
 .index-card-vert {
   background-color: rgb(0, 164, 3);
   height: 100%;
   width: 100%;
+  border-radius: 4px;
 }
 
 .index-card-normal {
   background-color: rgb(123, 123, 123);
   height: 100%;
   width: 100%;
+  border-radius: 4px;
 }
 
 .index-card-blue p{
@@ -84,4 +100,9 @@ a.link-card {
   justify-content: center;
   align-items: center;
   height: 130px;
+}
+
+.index-card-price {
+  display: flex;
+  justify-content: flex-end;
 }
