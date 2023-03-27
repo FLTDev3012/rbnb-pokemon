@@ -39,9 +39,29 @@
 
 }
 
+.home-left {
+  display: flex;
+  justify-content: center;
+  margin-top: 47px;
+  padding-right: 123px;
+}
+
+.home-left img {
+  opacity: 0.6;
+  transition: 0.5s;
+
+}
+
+.home-left img:hover {
+  opacity: 1;
+  transition: 0.5s;
+
+}
+
+
 .home-right p{
-  margin-bottom: 100px;
-  font-size: 20px;
+  margin-bottom: 70px;
+  font-size: 18px;
   color: #511801;
   text-shadow: 7px 5px 3px #ffca00;
 
@@ -71,7 +91,7 @@
   display: inline-block;
   font-weight: 600;
   font-size: 18px;
-  padding: 0 18px;
+  padding: 3px 40px;
   line-height: 50px;
   text-align: center;
   text-decoration: none;
@@ -90,6 +110,12 @@
 //   box-shadow: #422800 2px 2px 0 0;
 //   transform: translate(2px, 2px);
 // }
+
+
+.pokeball {
+  width: 100px;
+  height: 100px;
+}
 
 @media (min-width: 768px) {
   .button-74 {
