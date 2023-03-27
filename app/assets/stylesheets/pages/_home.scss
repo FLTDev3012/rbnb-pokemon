@@ -2,7 +2,8 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 .home-background {
   background-image: url(https://i.pinimg.com/originals/69/68/1e/69681ef4639fa37d34c05f824a597cb3.jpg);
   height: 100vh;
@@ -17,7 +18,7 @@
 }
 
 .home-titre h1{
-  font-size: 80px;
+  font-size: 100px;
   padding-top: 75px;
   font-family: 'Lobster', cursive;
   text-shadow: 6px 5px 2px #541302;
@@ -36,16 +37,60 @@
   margin-left: 20px;
   margin-right: 150px;
   text-align: center;
+  position: relative;
+  z-index: 10;
 
 }
+
+.home-left {
+  display: flex;
+  justify-content: center;
+  margin-top: 47px;
+  padding-right: 123px;
+}
+
+.home-left img {
+  opacity: 0.7;
+  transition: 0.5s;
+
+}
+
+
+.home-left img:hover {
+  opacity: 0.9;
+  transition: 0.5s;
+
+}
+
 
 .home-right p{
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   font-size: 20px;
   color: #511801;
-  text-shadow: 7px 5px 3px #ffca00;
+  // text-shadow: 7px 5px 3px #ffca00;
+  font-family: 'Secular One', sans-serif;
+  z-index: 10;
+
 
 }
+
+.home-right:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(papier);
+  background-size: 550px 370px;
+  // background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: -1;
+}
+
+
+
 
 // .home-right a{
 //   display: block;
@@ -71,7 +116,7 @@
   display: inline-block;
   font-weight: 600;
   font-size: 18px;
-  padding: 0 18px;
+  padding: 3px 40px;
   line-height: 50px;
   text-align: center;
   text-decoration: none;
@@ -90,6 +135,12 @@
 //   box-shadow: #422800 2px 2px 0 0;
 //   transform: translate(2px, 2px);
 // }
+
+
+.pokeball {
+  width: 100px;
+  height: 100px;
+}
 
 @media (min-width: 768px) {
   .button-74 {
