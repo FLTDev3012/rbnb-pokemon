@@ -12,10 +12,36 @@
   justify-content: center;
 }
 
-// .home-container {
-//   display: flex;
-// }
+.home-titre h1{
+  font-size: 80px;
+  padding-top: 75px;
+}
 
-// .home-left {
-//   width: 50%;
-// }
+.home-container {
+  display: flex;
+}
+
+.home-left {
+  min-width: 50%;
+}
+
+.home-right {
+  margin-top: 90px;
+  margin-left: 20px;
+  margin-right: 150px;
+  text-align: center;
+
+}
+
+.home-right p{
+  margin-bottom: 100px;
+  font-size: 20px;
+}
+
+.home-right a{
+  background-color: white;
+  font-size: 20px;
+  padding: 8px 16px;
+  color: black;
+  border-radius: 12px;
+}
