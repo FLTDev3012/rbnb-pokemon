@@ -1,25 +1,21 @@
 // Specific CSS for your home-page
 .home-background {
-  background-image: url(https://free4kwallpapers.com/uploads/originals/2016/09/05/pokemon-go-hd-wallpaper.jpg);
+  background-image: url(https://i.pinimg.com/originals/69/68/1e/69681ef4639fa37d34c05f824a597cb3.jpg);
   height: 100vh;
   background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+
+.home-titre {
   display: flex;
   justify-content: center;
 }
 
-.home-background h1 {
- margin-top: 70px;
-}
-.home-red a{
-  color: #c21900;
-}
+// .home-container {
+//   display: flex;
+// }
 
-.home-red a:hover{
-  color: #ff6a53;
-}
-
-.home-grey {
-  color: #6c6c6c;
-}
+// .home-left {
+//   width: 50%;
+// }
