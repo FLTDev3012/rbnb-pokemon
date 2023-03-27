@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 .home-background {
   background-image: url(https://i.pinimg.com/originals/69/68/1e/69681ef4639fa37d34c05f824a597cb3.jpg);
   height: 100vh;
@@ -15,6 +19,8 @@
 .home-titre h1{
   font-size: 80px;
   padding-top: 75px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 6px 5px 2px #541302;
 }
 
 .home-container {
@@ -36,12 +42,58 @@
 .home-right p{
   margin-bottom: 100px;
   font-size: 20px;
+  color: #511801;
+  text-shadow: 7px 5px 3px #ffca00;
+
 }
 
-.home-right a{
-  background-color: white;
-  font-size: 20px;
-  padding: 8px 16px;
-  color: black;
+// .home-right a{
+//   display: block;
+//   background-color: #511801;
+//   font-size: 20px;
+//   padding: 8px 16px;
+//   color: rgb(255, 255, 255);
+//   border-radius: 12px;
+//   box-shadow: 0px -6px 2px #ffffff96;
+//   transition: transform 0.2s ease-in-out;
+// }
+
+
+
+
+/* CSS */
+.button-74 {
+  background-color: #511801;
   border-radius: 12px;
+  box-shadow: #ffffff96 0 -4px 0 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  box-shadow: #ffffff96 0px 0px 0 0;
+  transform: translate(0px, -4px);
+  color: #ffffff;
+}
+
+// .button-74:active {
+//   box-shadow: #422800 2px 2px 0 0;
+//   transform: translate(2px, 2px);
+// }
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
 }
