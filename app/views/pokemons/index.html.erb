@@ -12,7 +12,17 @@
     <p><%= link_to "ajouter votre pokemon",  new_pokemon_path, class: "button"%></p>
   </div>
 
+  <h1>la  search-bar</h1>
+
+  <!-- debut searchbar-->
+
+
+  <!-- fin searchbar-->
+
+
+
   <div class="grid-index">
+    <% if @pokemons.any? %>
     <% @pokemons.each do |pokemon| %>
       <%= link_to pokemon_path(pokemon), class: "link-card" do%>
         <div class="card-container">
@@ -55,6 +65,9 @@
         </div>
       <% end %>
 
+    <% end %>
+     <% else %>
+      <em>Sorry, no movies found.</em>
     <% end %>
   </div>
 
