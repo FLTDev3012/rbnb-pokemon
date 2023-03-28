@@ -4,6 +4,11 @@ class PokemonsController < ApplicationController
 
   def index
     @pokemons = policy_scope(Pokemon)
+    if params[:query].present?
+      @pokemons = Pokemon.my_search(params[:query])
+    else
+      @pokemons = policy_scope(Pokemon)
+    end
   end
 
   def show
