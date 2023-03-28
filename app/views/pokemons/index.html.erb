@@ -12,63 +12,78 @@
     <p><%= link_to "ajouter votre pokemon",  new_pokemon_path, class: "button"%></p>
   </div>
 
-  <h1>la  search-bar</h1>
 
-  <!-- debut searchbar-->
 
+  <!-- debut searchbar (changer le style)-->
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 
   <!-- fin searchbar-->
 
 
 
   <div class="grid-index">
+
     <% if @pokemons.any? %>
-    <% @pokemons.each do |pokemon| %>
-      <%= link_to pokemon_path(pokemon), class: "link-card" do%>
-        <div class="card-container">
 
-          <div class="index-card-jaune">
+      <% @pokemons.each do |pokemon| %>
+        <%= link_to pokemon_path(pokemon), class: "link-card" do%>
+          <div class="card-container">
 
-            <% if pokemon.pokemon_type == "feu" %>
-              <div class="index-card-rouge">
-            <% elsif pokemon.pokemon_type == "plante"%>
-              <div class="index-card-vert">
-            <% elsif pokemon.pokemon_type == "normal"%>
-              <div class="index-card-normal">
-            <% elsif pokemon.pokemon_type == "electrique"%>
-              <div class="index-card-eleck">
-            <% else %>
-              <div class="index-card-blue">
-            <% end %>
+            <div class="index-card-jaune">
 
-                <div class="index-card-nom-level-pv">
-                  <p><%= pokemon.name %></p>
-                  <p>lvl <%= pokemon.level %></p>
-                  <p>80 pv</p>
+              <% if pokemon.pokemon_type == "feu" %>
+                <div class="index-card-rouge">
+              <% elsif pokemon.pokemon_type == "plante"%>
+                <div class="index-card-vert">
+              <% elsif pokemon.pokemon_type == "normal"%>
+                <div class="index-card-normal">
+              <% elsif pokemon.pokemon_type == "electrique"%>
+                <div class="index-card-eleck">
+              <% else %>
+                <div class="index-card-blue">
+              <% end %>
+
+                  <div class="index-card-nom-level-pv">
+                    <p><%= pokemon.name %></p>
+                    <p>lvl <%= pokemon.level %></p>
+                    <p>80 pv</p>
+                  </div>
+
+                  <div class="index-card-photo">
+                    <%= cl_image_tag pokemon.photo.key, height: 200, width: 280, crop: :fill %>
+                    <!-- width max -->
+                  </div>
+
+                  <div class="index-card-description">
+                    <p><%= pokemon.description %></p>
+                  </div>
+
                 </div>
+            </div>
+            <div class="index-card-price">
+              <p><%= pokemon.price %> pieces</p>
+            </div>
 
-                <div class="index-card-photo">
-                  <%= cl_image_tag pokemon.photo.key, height: 200, width: 280, crop: :fill %>
-                  <!-- width max -->
-                </div>
-
-                <div class="index-card-description">
-                  <p><%= pokemon.description %></p>
-                </div>
-
-              </div>
           </div>
-          <div class="index-card-price">
-            <p><%= pokemon.price %> pieces</p>
-          </div>
-
-        </div>
+        <% end %>
       <% end %>
 
+    <% else %>
+        <em>Sorry, no movies found.</em>
     <% end %>
-     <% else %>
-      <em>Sorry, no movies found.</em>
-    <% end %>
+
   </div>
 
   <div class="fondu-bas-index"></div>
