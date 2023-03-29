@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "pages#dashboard"
 
-  resources :pokemons
+  resources :pokemons do
+    resources :bookings, only: [:create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
