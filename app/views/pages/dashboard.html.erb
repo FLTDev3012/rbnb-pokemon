@@ -1,10 +1,61 @@
-<h1>Bienvenue sur ton Dashboard ! Trainer <%= current_user.email %>!</h1>
-<%= link_to "index des pokemon", pokemons_path%>
+<div class="dash-container">
+  <h1>Bienvenue sur ton Dashboard ! Trainer <%= current_user.email %>!</h1>
+  <%= link_to "index des pokemon", pokemons_path%>
 
 
 
-<% @pokemons.each do |pokemon| %>
-  <br><br><br><br><br>
-  <p><%= pokemon.name %></p>
-  <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <h2>Vos Pokemons</h2>
+
+  <% @pokemons.each do |pokemon| %>
+    <br><br><br><br><br>
+    <p><%= pokemon.name %></p>
+    <%= cl_image_tag pokemon.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
+
+
+
+  <h2>Demande de reservation</h2>
+
+  <% @bookings_as_owner.each do |booking| %>
+    <div>
+
+      <br>
+      <p><%= booking.pokemon.titre.upcase %></p>
+      <br>
+      <p>De : <%= booking.user.email %></p>
+      <p>Du : <%= booking.start_date.strftime('%-d %b. %y') %></p>
+      <p>Au : <%= booking.end_date.strftime('%-d %b. %y') %></p>
+      <br>
+      <% if booking.status == "accepted" || booking.status == "refused" %>
+
+          <p class="<%= booking.status == 'accepted' ? 'accepted-confirmation' : ' refused-confirmation' %>">
+          <strong><%= booking.status.upcase %></strong></p>
+      <% end %>
+
+
+      <br>
+      <p>
+        <% if booking.status == "pending"%>
+          <!-- <%= link_to "accepted", booking_accepted_path(booking), data: {turbo_method: :patch, turbo_confirm: "Are you sure to accept?"} %> || -->
+          <%= link_to "accepter", booking_accepted_path(booking), { class: "accepted-link", data: {turbo_method: :patch, turbo_confirm: "Are you sure to accept?"} } %> ||
+          <!-- <%= link_to "refused", booking_refused_path(booking), data: {turbo_method: :patch, turbo_confirm: "Are you sure to decline?"} %> || -->
+          <%= link_to "refuser", booking_refused_path(booking), { class: "refused-link", data: {turbo_method: :patch, turbo_confirm: "Are you sure to decline?"} } %>
+        <% end %>
+      </p>
+      <br>
+    </div>
+
+
+  <% end %>
+
+
+
+  <h2>Vos Pokemons</h2>
+
+  <% @bookings.each do |booking| %>
+    <br><br><br><br><br>
+    <p><%= booking.pokemon.name %></p>
+    <%= cl_image_tag booking.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+</div>
