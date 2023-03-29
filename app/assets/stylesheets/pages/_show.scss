@@ -7,8 +7,8 @@
   align-items: center;
   position: relative;
 }
-.show-content h1 {
-  color: red;
+.show-content h1{
+  color: red !important;
 }
 .body-glass {
   background-color: rgba($color: #ffffff, $alpha: 0.5);
