@@ -21,6 +21,24 @@
         <p><%= @pokemon.description %></p>
       </div>
 
+      <!-- debur form reservation-->
+
+      <%= form_for @booking, url: pokemon_bookings_path(@pokemon), method: :post do |f| %>
+        <div class="field">
+          <%= f.label :start_date %><br>
+          <%= f.datetime_field :start_date, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :end_date %><br>
+          <%= f.datetime_field :end_date, class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Réserver", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <!-- fin form reservation -->
 
 
     </div>

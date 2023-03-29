@@ -12,6 +12,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @pokemon = Pokemon.find(params[:id])
     authorize @pokemon
   end
