@@ -6,8 +6,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @garage = Garage.find(params[:garage_id])
-    @booking.garage = @garage
+    @garage = Pokemon.find(params[:garage_id])
+    @booking.pokemon = @pokemon
     @booking.status = "pending"
     authorize @booking
     if @booking.save
